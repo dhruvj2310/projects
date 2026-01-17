@@ -6,29 +6,20 @@ load_dotenv()
 
 api_key = os.getenv("API_KEY")
 api_url = os.getenv("API_URL")
-geo_url = os.getenv("GEO_URL")
-zip_url = os.getenv("ZIP_URL")
 
-def get_lat_lon(city):
-    params = {
-        "q": city,
-        "limit": 1,
-        "appid": api_key
-    }
+def get_current_weather(city):
+    """
+    Get current weather data using latitude and longitude
+    """
 
-    response = requests.get(geo_url, params=params)
+    response = requests.get(f"{api_url}?key={api_key}&q={city}&api=no")
 
     if response.status_code != 200:
-        raise Exception(f"API error: {response.status_code}")
+        raise Exception(f"Weather API error: {response.status_code}")
 
-    data = response.json()
-
-    if not data:
-        return None
-
-    lat = data[0]["lat"]
-    lon = data[0]["lon"]
-
-    return lat, lon
-
-# def get_
+    json_out = response.json()
+    data = json_out["current"]
+    summary = (
+        f"\n\nAs on {data['last_updated']}, the current weather in {city} is \n{data['condition']['text'].lower()} with a temperature of \n{data['temp_c']}°C ({data['temp_f']}°F). \n\nIt feels like {data['feelslike_c']}°C, with humidity at {data['humidity']}% \nand wind blowing {data['wind_dir']} at {data['wind_kph']} km/h.\n\n"
+    )
+    return summary

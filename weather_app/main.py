@@ -1,7 +1,9 @@
 from utils.utils import *
 
 location = input("Location for current weather: ")
-print(location)
 
 if location:
-    get_lat_lon(location)
+    weather = get_current_weather(location)
+    print(weather)
+else:
+    print("City not found")
