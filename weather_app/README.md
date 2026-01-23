@@ -1,5 +1,3 @@
-# projects
-Portfolio projects - Python
+API url - weatherapi.com
 
-weather_app - using a free API from public data source to get the weather data from user input (city)
-weather_webapp - using streamlit to create a webapp to apply weather_app function
+WeatherAPI.com is a web-based weather and geolocation API service that provides global weather data to developers and applications. It lets you programmatically retrieve weather information in JSON or XML format for nearly any location worldwide.  ￼
