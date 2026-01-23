@@ -2,11 +2,12 @@ import requests, json
 from dotenv import load_dotenv
 import os
 
+# load secrets from .env file for easy access and not hardcode it
 load_dotenv()
-
 api_key = os.getenv("API_KEY")
 api_url = os.getenv("API_URL")
 
+# create a function to make the API call
 def get_current_weather(city):
     """
     Get current weather data using latitude and longitude
