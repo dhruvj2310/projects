@@ -208,3 +208,5 @@ __marimo__/
 
 #virtual environments
 *venv
+*.csv
+*.DS_Store
