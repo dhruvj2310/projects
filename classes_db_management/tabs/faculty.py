@@ -15,4 +15,4 @@ This is paragraph two with more details.
 
 **Bold**, *italic*, etc.
 """)
-    st.html("/Users/dhruvjadav/Documents/Projects/github_repo/projects/classes_db_management/tabs/html/faculty.html")
+    st.html("/Users/dhruvjadav/Documents/Projects/github_repo/projects/classes_db_management/tabs/html/faculty.htmlw")
