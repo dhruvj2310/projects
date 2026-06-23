@@ -2,6 +2,7 @@ from openrouter import OpenRouter
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 def api_call(q: str):
@@ -18,4 +19,4 @@ def api_call(q: str):
         ]
     )
 
-    return response
+    return response.choices[0].message.content

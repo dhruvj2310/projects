@@ -58,7 +58,7 @@ if prompt := st.chat_input("Ask anything..."):
                 response = api_call(prompt)
 
                 # Adjust this depending on OpenRouter SDK response format
-                answer = response.message.content
+                answer = response
 
             except Exception as e:
                 answer = f"Error: {str(e)}"
